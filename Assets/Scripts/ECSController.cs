@@ -1,7 +1,7 @@
 ﻿using Leopotam.EcsLite;
 using UnityEngine;
 
-public class GameStartup : MonoBehaviour
+public class ECSController : MonoBehaviour
 {
     EcsWorld _world;
     IEcsSystems _systems;
