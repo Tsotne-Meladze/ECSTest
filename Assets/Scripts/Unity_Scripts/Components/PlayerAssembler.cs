@@ -18,5 +18,9 @@ public class PlayerAssembler : MonoBehaviour
         var clickFollowPool = _world.GetPool<XZClickFollower>();
         ref var followComponent = ref clickFollowPool.Add(entity);
         followComponent.Init(_player);
+
+        var rotationPool = _world.GetPool<RotatorTowardsXZVelocity>();
+        ref var rotatorComponent = ref rotationPool.Add(entity);
+        rotatorComponent.Init(_player);
     }
 }
