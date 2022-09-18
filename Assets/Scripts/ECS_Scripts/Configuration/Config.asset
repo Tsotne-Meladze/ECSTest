@@ -16,3 +16,5 @@ MonoBehaviour:
   PadMoveDistance: {x: 0, y: -0.25, z: 0}
   GateMoveSpeed: 2
   PadCollisionDistance: 1
+  PlayerRunSpeed: 10
+  RotationSpeed: 1

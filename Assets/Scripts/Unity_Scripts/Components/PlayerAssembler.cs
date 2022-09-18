@@ -14,5 +14,9 @@ public class PlayerAssembler : MonoBehaviour
         var activatorPool = _world.GetPool<TriggerActivator>();
         ref var activatorComponent = ref activatorPool.Add(entity);
         activatorComponent.Init(_player);
+
+        var clickFollowPool = _world.GetPool<XZClickFollower>();
+        ref var followComponent = ref clickFollowPool.Add(entity);
+        followComponent.Init(_player);
     }
 }

@@ -14,6 +14,7 @@ public class ECSController : MonoBehaviour
         _systems = new EcsSystems(_world, _configuration);
         _systems.Add(new TriggerActivationSystem());
         _systems.Add(new TriggerMoveResponceSystem());
+        _systems.Add(new XZClickFollowSystem());
         _systems.Init();
 
         return _world;

@@ -26,11 +26,6 @@ public class TriggerActivationSystem : IEcsRunSystem, IEcsInitSystem
     {
         foreach (var i in _triggerEntities)
         {
-            if(Input.GetKeyDown(KeyCode.J))
-            {
-                Debug.Log("Ka");
-            }
-
             ref var trigger = ref _triggerPool.Get(i);
 
             trigger.IsActive = false;

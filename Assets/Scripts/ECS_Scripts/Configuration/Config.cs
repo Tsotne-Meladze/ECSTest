@@ -8,4 +8,8 @@ public class Config : ScriptableObject
     public Vector3 PadMoveDistance;
     public float GateMoveSpeed;
     public float PadCollisionDistance;
+
+    [Header("Player")]
+    public float PlayerRunSpeed;
+    public float RotationSpeed;
 }
