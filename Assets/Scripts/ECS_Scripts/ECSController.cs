@@ -5,12 +5,18 @@ public class ECSController : MonoBehaviour
 {
     EcsWorld _world;
     IEcsSystems _systems;
+    [SerializeField] private Config _configuration = null;
 
-    void Start()
+    public EcsWorld Init()
     {
         _world = new EcsWorld();
-        _systems = new EcsSystems(_world);
+
+        _systems = new EcsSystems(_world, _configuration);
+        _systems.Add(new TriggerActivationSystem());
+        _systems.Add(new TriggerMoveResponceSystem());
         _systems.Init();
+
+        return _world;
     }
 
     void Update()
