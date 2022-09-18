@@ -6,6 +6,7 @@ public class PlayerAssembler : MonoBehaviour
 {
     [Inject] private EcsWorld _world = null;
     [SerializeField] private Transform _player = null;
+    [SerializeField] private Animator _animator = null;
 
     private void Start()
     {
@@ -19,8 +20,12 @@ public class PlayerAssembler : MonoBehaviour
         ref var followComponent = ref clickFollowPool.Add(entity);
         followComponent.Init(_player);
 
-        var rotationPool = _world.GetPool<RotatorTowardsXZVelocity>();
-        ref var rotatorComponent = ref rotationPool.Add(entity);
-        rotatorComponent.Init(_player);
+        var cachedPosPool = _world.GetPool<CachedPosition>();
+        ref var cachedPosComponent = ref cachedPosPool.Add(entity);
+        cachedPosComponent.Init(_player);
+
+        var posAnimPool = _world.GetPool<CachedPositionAnimator>();
+        ref var posAnimComponent = ref posAnimPool.Add(entity);
+        posAnimComponent.Init(_animator, Animator.StringToHash("IsRunning"), entity);
     }
 }

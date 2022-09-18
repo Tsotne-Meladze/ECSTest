@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public struct RotatorTowardsXZVelocity
+public struct CachedPosition
 {
     public Transform Transform;
     public Vector3 PrevFramePosition;

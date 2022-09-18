@@ -17,4 +17,4 @@ MonoBehaviour:
   GateMoveSpeed: 2
   PadCollisionDistance: 1
   PlayerRunSpeed: 10
-  RotationSpeed: 1
+  RotationSpeed: 400

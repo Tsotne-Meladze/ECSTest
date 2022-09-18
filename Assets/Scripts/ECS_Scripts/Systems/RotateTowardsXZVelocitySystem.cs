@@ -7,15 +7,15 @@ public class RotateTowardsXZVelocitySystem : IEcsRunSystem, IEcsInitSystem
     private EcsWorld _world;
 
     private EcsFilter _rotatorEntities;
-    private EcsPool<RotatorTowardsXZVelocity> _rotatorPool;
+    private EcsPool<CachedPosition> _rotatorPool;
 
     public void Init(IEcsSystems systems)
     {
         _config = systems.GetShared<Config>();
         _world = systems.GetWorld();
 
-        _rotatorEntities = _world.Filter<RotatorTowardsXZVelocity>().End();
-        _rotatorPool = _world.GetPool<RotatorTowardsXZVelocity>();
+        _rotatorEntities = _world.Filter<CachedPosition>().End();
+        _rotatorPool = _world.GetPool<CachedPosition>();
     }
 
     public void Run(IEcsSystems systems)
@@ -32,8 +32,6 @@ public class RotateTowardsXZVelocitySystem : IEcsRunSystem, IEcsInitSystem
                 argetRot.SetLookRotation(_rotator.CurFramePosition - _rotator.PrevFramePosition, Vector3.up);
                 _rotator.Transform.localRotation = Quaternion.RotateTowards(_rotator.Transform.localRotation, argetRot, maxRotDegrees);
             }
-
-            _rotator.PrevFramePosition = _rotator.CurFramePosition;
         }
     }
 }

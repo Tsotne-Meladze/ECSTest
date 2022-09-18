@@ -324,6 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 254801642}
+  _animator: {fileID: 1856365767}
 --- !u!4 &334247053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4448047868687979241, guid: c40f2294fedc58e48bfce035600f14be, type: 3}
@@ -781,6 +782,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8930703129362963815, guid: 168a6044727218341964b2931cfb2253, type: 3}
   m_PrefabInstance: {fileID: 8930703128378254087}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1856365767 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: bf3b5c21e36ca224987789f883f4d0fd, type: 3}
+  m_PrefabInstance: {fileID: 145271313}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1969304916
 GameObject:
